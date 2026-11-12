@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
-import com.isw2.avistamientos_api.Model.AvistamientoModelo;
+import com.isw2.avistamientos_api.model.AvistamientoModelo;
 
 @Component
 public class ValidadorDeAvistamiento {

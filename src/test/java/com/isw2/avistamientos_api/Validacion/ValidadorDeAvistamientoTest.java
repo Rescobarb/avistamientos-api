@@ -13,7 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import com.isw2.avistamientos_api.Model.AvistamientoModelo;
+import com.isw2.avistamientos_api.model.AvistamientoModelo;
 
 class ValidadorDeAvistamientoTest {
 

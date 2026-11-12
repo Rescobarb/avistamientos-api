@@ -1,4 +1,4 @@
-package com.isw2.avistamientos_api.Model;
+package com.isw2.avistamientos_api.model;
 
 import java.time.LocalDate;
 
