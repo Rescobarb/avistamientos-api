@@ -1,9 +1,6 @@
 package com.isw2.avistamientos_api.adaptadores.persistencia;
 
 import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +18,7 @@ public class AvistamientoModelo {
 	
 	private String especie;
 
-	@JsonProperty("lugar")
+
 	@Column(name = "ubicacion")
 	private String ubicacion;
 

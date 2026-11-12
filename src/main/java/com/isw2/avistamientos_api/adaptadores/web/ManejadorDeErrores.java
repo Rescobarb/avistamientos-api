@@ -1,4 +1,4 @@
-package com.isw2.avistamientos_api.controller;
+package com.isw2.avistamientos_api.adaptadores.web;
 
 import java.util.Map;
 
