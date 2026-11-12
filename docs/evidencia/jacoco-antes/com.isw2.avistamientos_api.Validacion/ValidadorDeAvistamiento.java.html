@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ValidadorDeAvistamiento.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report"></a> &gt; <a href="index.source.html" class="el_package">com.isw2.avistamientos_api.Validacion</a> &gt; <span class="el_source">ValidadorDeAvistamiento.java</span></div><h1>ValidadorDeAvistamiento.java</h1><pre class="source lang-java linenums">package com.isw2.avistamientos_api.Validacion;
+
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Component;
+
+import com.isw2.avistamientos_api.model.AvistamientoModelo;
+
+@Component
+public class ValidadorDeAvistamiento {
+
+    private final Reloj reloj;
+
+<span class="fc" id="L14">    public ValidadorDeAvistamiento(Reloj reloj) {</span>
+<span class="fc" id="L15">        this.reloj = reloj;</span>
+<span class="fc" id="L16">    }</span>
+
+    public void validar(AvistamientoModelo a) {
+<span class="fc" id="L19">        validarEspecie(a.getEspecie());</span>
+<span class="fc" id="L20">        validarFecha(a.getFecha());</span>
+<span class="fc" id="L21">        validarNoVacio(&quot;lugar&quot;, a.getUbicacion());</span>
+<span class="fc" id="L22">        validarNoVacio(&quot;observador&quot;, a.getObservador());</span>
+<span class="fc" id="L23">    }</span>
+
+    private void validarEspecie(String especie) {
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (especie == null || especie.isBlank()</span>
+<span class="fc bfc" id="L27" title="All 4 branches covered.">                || especie.length() &lt; 3 || especie.length() &gt; 50) {</span>
+<span class="fc" id="L28">            throw new AvistamientoInvalidoException(&quot;especie&quot;,</span>
+                    &quot;La especie debe tener entre 3 y 50 caracteres&quot;);
+        }
+<span class="fc" id="L31">    }</span>
+
+    private void validarFecha(LocalDate fecha) {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (fecha == null) {</span>
+<span class="fc" id="L35">            throw new AvistamientoInvalidoException(&quot;fecha&quot;,</span>
+                    &quot;La fecha es obligatoria y debe tener formato AAAA-MM-DD&quot;);
+        }
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (fecha.isAfter(reloj.hoy())) {</span>
+<span class="fc" id="L39">            throw new AvistamientoInvalidoException(&quot;fecha&quot;,</span>
+                    &quot;La fecha no puede ser posterior a hoy&quot;);
+        }
+<span class="fc" id="L42">    }</span>
+
+    private void validarNoVacio(String campo, String valor) {
+<span class="fc bfc" id="L45" title="All 4 branches covered.">        if (valor == null || valor.isBlank()) {</span>
+<span class="fc" id="L46">            throw new AvistamientoInvalidoException(campo,</span>
+                    &quot;El campo &quot; + campo + &quot; no puede estar vacío&quot;);
+        }
+<span class="fc" id="L49">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

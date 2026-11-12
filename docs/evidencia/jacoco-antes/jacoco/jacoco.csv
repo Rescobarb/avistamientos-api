@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+,com.isw2.avistamientos_api.Validacion,RelojSistema,0,5,0,0,0,2,0,2,0,2
+,com.isw2.avistamientos_api.Validacion,ValidadorDeAvistamiento,0,79,0,16,0,20,0,13,0,5
+,com.isw2.avistamientos_api.Validacion,AvistamientoInvalidoException,0,10,0,0,0,4,0,2,0,2
+,com.isw2.avistamientos_api,AvistamientosApiApplication,5,3,0,0,2,1,1,1,1,1
+,com.isw2.avistamientos_api.model,AvistamientoModelo,13,53,0,0,1,18,1,12,1,12
+,com.isw2.avistamientos_api.controller,AvistamientoController,0,120,0,2,0,28,0,9,0,8
+,com.isw2.avistamientos_api.controller,ManejadorDeErrores,18,43,6,4,2,9,5,4,0,4
