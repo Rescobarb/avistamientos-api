@@ -19,7 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.isw2.avistamientos_api.model.AvistamientoModelo;
 import com.isw2.avistamientos_api.repository.AvistamientoRepository;
 
-import com.isw2.avistamientos_api.Validacion.ValidadorDeAvistamiento;
+import com.isw2.avistamientos_api.validacion.ValidadorDeAvistamiento;
 
 @RestController
 @RequestMapping("/avistamientos")

@@ -1,4 +1,4 @@
-package com.isw2.avistamientos_api.Validacion;
+package com.isw2.avistamientos_api.validacion;
 
 public class AvistamientoInvalidoException extends RuntimeException {
     private final String campo;

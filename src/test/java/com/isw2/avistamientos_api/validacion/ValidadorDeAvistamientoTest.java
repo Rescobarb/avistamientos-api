@@ -1,4 +1,4 @@
-package com.isw2.avistamientos_api.Validacion;
+package com.isw2.avistamientos_api.validacion;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
