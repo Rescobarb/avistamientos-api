@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.isw2.avistamientos_api.model.AvistamientoModelo;
 import com.isw2.avistamientos_api.repository.AvistamientoRepository;
-
-import com.isw2.avistamientos_api.validacion.ValidadorDeAvistamiento;
+import com.isw2.avistamientos_api.entidades.Avistamiento;
+import com.isw2.avistamientos_api.entidades.ValidadorDeAvistamiento;
 
 @RestController
 @RequestMapping("/avistamientos")
@@ -53,7 +52,7 @@ public class AvistamientoController {
 
     @PostMapping("/crear")
     public ResponseEntity<AvistamientoModelo> crear(@RequestBody AvistamientoModelo nuevo) {
-        validador.validar(nuevo);
+        validar(nuevo);
         nuevo.setId(null);
         AvistamientoModelo guardado = aRepo.save(nuevo);
         URI location = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -63,7 +62,7 @@ public class AvistamientoController {
 
     @PutMapping("/actualizar{id}")
     public ResponseEntity<AvistamientoModelo> actualizar(@PathVariable Long id, @RequestBody AvistamientoModelo datos) {
-        validador.validar(datos);
+        validar(datos);
         return aRepo.findById(id).map(existente -> {
             existente.setEspecie(datos.getEspecie());
             existente.setUbicacion(datos.getUbicacion());
@@ -81,4 +80,8 @@ public class AvistamientoController {
         aRepo.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    private void validar(AvistamientoModelo m) {
+    validador.validar(new Avistamiento(m.getEspecie(), m.getUbicacion(), m.getFecha(), m.getObservador()));
+}
 }

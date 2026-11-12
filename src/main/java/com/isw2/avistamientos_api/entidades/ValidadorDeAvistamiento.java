@@ -1,12 +1,7 @@
-package com.isw2.avistamientos_api.validacion;
+package com.isw2.avistamientos_api.entidades;
 
 import java.time.LocalDate;
 
-import org.springframework.stereotype.Component;
-
-import com.isw2.avistamientos_api.model.AvistamientoModelo;
-
-@Component
 public class ValidadorDeAvistamiento {
 
     private final Reloj reloj;
@@ -15,10 +10,10 @@ public class ValidadorDeAvistamiento {
         this.reloj = reloj;
     }
 
-    public void validar(AvistamientoModelo a) {
+    public void validar(Avistamiento a) {
         validarEspecie(a.getEspecie());
         validarFecha(a.getFecha());
-        validarNoVacio("lugar", a.getUbicacion());
+        validarNoVacio("lugar", a.getLugar());
         validarNoVacio("observador", a.getObservador());
     }
 

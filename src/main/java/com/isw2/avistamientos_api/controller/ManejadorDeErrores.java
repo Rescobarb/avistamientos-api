@@ -7,7 +7,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.isw2.avistamientos_api.validacion.AvistamientoInvalidoException;
+import com.isw2.avistamientos_api.entidades.AvistamientoInvalidoException;
 
 @RestControllerAdvice
 public class ManejadorDeErrores {
