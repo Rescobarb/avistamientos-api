@@ -22,8 +22,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import com.isw2.avistamientos_api.model.AvistamientoModelo;
-import com.isw2.avistamientos_api.repository.AvistamientoRepository;
+import com.isw2.avistamientos_api.adaptadores.persistencia.AvistamientoModelo;
+import com.isw2.avistamientos_api.adaptadores.persistencia.AvistamientoRepository;
 import com.jayway.jsonpath.JsonPath;
 
 @SpringBootTest

@@ -1,4 +1,4 @@
-package com.isw2.avistamientos_api.model;
+package com.isw2.avistamientos_api.adaptadores.persistencia;
 
 import java.time.LocalDate;
 

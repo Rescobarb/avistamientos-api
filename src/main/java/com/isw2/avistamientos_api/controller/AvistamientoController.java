@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import com.isw2.avistamientos_api.model.AvistamientoModelo;
-import com.isw2.avistamientos_api.repository.AvistamientoRepository;
+import com.isw2.avistamientos_api.adaptadores.persistencia.AvistamientoModelo;
+import com.isw2.avistamientos_api.adaptadores.persistencia.AvistamientoRepository;
 import com.isw2.avistamientos_api.entidades.Avistamiento;
 import com.isw2.avistamientos_api.entidades.ValidadorDeAvistamiento;
 
